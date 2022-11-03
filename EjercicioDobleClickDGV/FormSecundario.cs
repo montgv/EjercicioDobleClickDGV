@@ -37,7 +37,8 @@ namespace EjercicioDobleClickDGV
         }
 
         /*
-         * Añadimos la ref del datagridview y las filas seleccionadas del FormPrincipal
+         * Añadimos la ref del datagridview y las filas seleccionadas del FormPrincipal,
+         * nos muestra los datos de la fila seleccionada
          */
         public FormSecundario(ref DataGridViewCellCollection fila)
         {
@@ -56,31 +57,17 @@ namespace EjercicioDobleClickDGV
 
         }
 
+        /*
+         * Este metodo guarda los datos que se han pasado de la fila seleccionada de FormPrincipal
+         * y se si cambian los guarda y se actualizada en el FormPrincipal
+         */
         private void btCopiarDatos_Click(object sender, EventArgs e)
         {
-            //Si no hay fila extraido, añadimos nuevos datos al datagridview y sino cambiamos los datos de la fila extraida
-            if (filaExtraida == null)
-            {
-                DataGridViewRow fila = new DataGridViewRow();
-                fila.CreateCells(dataGridViewCompleto);
-                fila.Cells[0].Value = this.tBNombre.Text;
-                fila.Cells[1].Value = this.tBApellido.Text;
-                fila.Cells[2].Value = this.tBTelefono.Text;
-                fila.Cells[3].Value = this.tBDireccion.Text;
 
-                dataGridViewCompleto.Rows.Add(fila);
-
-                this.tBNombre.Text = "";
-                this.tBApellido.Text = "";
-                this.tBTelefono.Text = "";
-                this.tBDireccion.Text = "";
-            } else
-            {
-                filaExtraida[0].Value = this.tBNombre.Text;
-                filaExtraida[1].Value = this.tBApellido.Text;
-                filaExtraida[2].Value = this.tBTelefono.Text;
-                filaExtraida[3].Value = this.tBDireccion.Text;
-            }
+            filaExtraida[0].Value = this.tBNombre.Text;
+            filaExtraida[1].Value = this.tBApellido.Text;
+            filaExtraida[2].Value = this.tBTelefono.Text;
+            filaExtraida[3].Value = this.tBDireccion.Text;
 
             Close();
         }

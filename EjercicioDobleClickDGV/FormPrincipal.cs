@@ -66,6 +66,10 @@ namespace EjercicioDobleClickDGV
             this.tBDireccion.Text = "";
         }
 
+        /*
+         * Este metodo cuando hacemos doble click en una fila lo que hace es que coge los datos de la 
+         * fila y nos lo pasa a FormSecundario
+         */
         private void dgv_DoubleClick(object sender, EventArgs e)
         {
             DataGridViewCellCollection datosFila = dgv.CurrentRow.Cells;
@@ -76,7 +80,7 @@ namespace EjercicioDobleClickDGV
         }
 
         /*
-        *Borramos la fila seleccionada del dgv
+        * Borramos la fila seleccionada del dgv
         */
         private void btEliminar_Click(object sender, EventArgs e)
         {
@@ -89,7 +93,7 @@ namespace EjercicioDobleClickDGV
         }
 
         /*
-         * Comprobamos los datos introducidos con el telefono, si la longitud del texto de telefono es distinto de 9
+         * Comprobamos los datos introducidos en el tBTelefono, si la longitud del texto de telefono es distinto de 9
          * se cambian el fondo del textbox a rojo y sino el fondo es blanco
          */
         private void tBTelefono_TextChanged(object sender, EventArgs e)
